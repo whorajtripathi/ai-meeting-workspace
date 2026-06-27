@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "CommonJS",
+    "rootDir": "./src",     //All our code lives inside
+    "outDir": "./dist",     //Compiled JS goes inside
+
+    "strict": true,         //catches bugs before your code runs
+
+    "esModuleInterop": true,
+
+    "skipLibCheck": true,
+
+    "forceConsistentCasingInFileNames": true
+  }
+}
