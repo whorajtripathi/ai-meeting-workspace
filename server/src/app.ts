@@ -17,6 +17,6 @@ app.use(helmet());                      //Helmet automatically adds security hea
 app.use(morgan("dev"));
 app.use(express.json());
 
-app.use("/",routes);
+app.use("/api/v1",routes);
 
 export default app;
