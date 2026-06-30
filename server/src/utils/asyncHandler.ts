@@ -33,3 +33,50 @@ export const asyncHandler=
 // Global Error Middleware
 // ↓
 // JSON Response
+
+//                 SERVER STARTS
+//                      │
+//                      ▼
+//         asyncHandler(register)
+//                      │
+//                      ▼
+//       Returns Wrapped Function
+//                      │
+//                      ▼
+//       Express Stores That Function
+// ═══════════════════════════════════════
+//            USER SENDS REQUEST
+// ═══════════════════════════════════════
+//                      │
+//                      ▼
+//      Express Executes Wrapped Function
+//                      │
+//                      ▼
+//           fn(req,res,next)
+//                      │
+//                      ▼
+//              register()
+//                      │
+//                      ▼
+//          userService.register()
+//                      │
+//                      ▼
+//          userRepository.create()
+//                      │
+//                      ▼
+//                MongoDB
+//             /              \
+//            /                \
+//       Success            Exception
+//          │                   │
+//          ▼                   ▼
+//    Response Sent      Promise Rejected
+//                              │
+//                              ▼
+//                         .catch(next)
+//                              │
+//                              ▼
+//                   Global Error Middleware
+//                              │
+//                              ▼
+//                   Standard Error Response
