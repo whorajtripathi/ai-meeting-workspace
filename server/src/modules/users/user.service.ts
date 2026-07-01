@@ -28,3 +28,11 @@ export class UserService{
 }
 
 export const userService= new UserService();
+
+// import {userRepository, UserRepository} from "./user.repository";
+
+// export const userService={
+//     async register(userData:any){
+
+//     }
+// };
